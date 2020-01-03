@@ -24,7 +24,7 @@
 
 #### 試験
 ```
-telnet localhost 25
+# telnet localhost 25
 helo 25
 mail from:xxxx@yyyy.zz.jp
 rcpt to:xxxx@yyyy.zz.jp
