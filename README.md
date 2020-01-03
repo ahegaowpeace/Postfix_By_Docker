@@ -15,11 +15,9 @@
 # docker run -itd -p 587:587 -p 25:25 -p 465:465 --name postfix 【イメージid】 /bin/bash
 ```
 
-#### コンテナ内設定
+#### postfix起動
 ```
 # docker exec -it postfix /bin/bash
-# cd /etc/postfix
-# /bin/bash sed.sh
 # /sbin/postfix/start
 ```
 構築完了.
