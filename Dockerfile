@@ -19,3 +19,14 @@ RUN yum install -y postfix
 RUN yum install -y cyrus-sasl cyrus-sasl-plain
 RUN yum install -y mailx
 RUN yum install -y telnet
+
+# copy config files AND replace config
+COPY files/main.cf.org /etc/postfix/main.cf.org
+COPY init/sed.sh /etc/postfix/sed.sh
+COPY files/sasl_passwd /etc/postfix/sasl_passwd
+WORKDIR /etc/postfix
+RUN /bin/bash sed.sh
+
+# Create DB
+RUN /usr/sbin/postmap /etc/postfix/sasl_passwd
+RUN chmod 600 /etc/postfix/sasl_passwd.db
