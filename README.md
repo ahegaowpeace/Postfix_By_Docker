@@ -12,7 +12,7 @@
 #### ビルド/ラン
 ```
 # docker build -t labo:postfix .
-# docker run -itd -p 587:587 -p 25:25 -p 465:465 --name postfix 【イメージid】 /bin/bash
+# docker run -itd -p 587:587 -p 25:25 -p 465:465 --name postfix 【イメージid】 /sbin/init
 ```
 
 #### postfix起動
